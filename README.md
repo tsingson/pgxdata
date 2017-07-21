@@ -8,7 +8,8 @@
 go get -u github.com/jackc/pgxdata
 ```
 
-**STEP 2** add GOPATH/bin to PATH
+**STEP 2** add GOPATH/bin to PATH , make sure pgxdata runing anywhere
+
 
 **STEP 3** then create a postgresql schema like this
 ```
@@ -16,17 +17,21 @@ go get -u github.com/jackc/pgxdata
     psql pgxdata -f test/structure.sql
 ```
 
+
 **STEP 4** run pgxdata once to create a new go package name "data" within $GOPATH/src
 ```
    cd $GOPATH/src
    pgxdata init dbi
 ```
+
 this command will create a directory name "dbi" and two file inside "dbi"
+
 ```
 ls ./dbi
 config.toml
 pgxdata_db.go
 ```
+
 cat the ./dbi/config.toml like this
 ```
 cat ./dbi/config.toml
@@ -51,6 +56,7 @@ table_name = "customer"
 ```
 vi dbi/config.toml
 ```
+
 with this look like
 ```
 package = "dbi"
