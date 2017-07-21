@@ -18,7 +18,7 @@ go get -u github.com/jackc/pgxdata
 ```
 
 
-**STEP 4** run pgxdata once to create a new go package name "data" within $GOPATH/src
+**STEP 4** run pgxdata once to create a new go package name "dbi" within $GOPATH/src
 ```
    cd $GOPATH/src
    pgxdata init dbi
@@ -60,6 +60,7 @@ vi dbi/config.toml
 with this look like
 ```
 package = "dbi"
+
 [database]
 host = "127.0.0.1"
 port = 5432
@@ -105,6 +106,26 @@ struct_name = "Blob"
 cd dbi
 pgxdata generate
 ```
+
+**Final** check $GOPATH/src/dbi to see all generated go package for postgres database pgxdata
+```
+ls $GOPATH/src/dbi
+
+8596271720 drwxr-xr-x  12 qinshen  staff    384 Jul 22 01:17 ./
+8596271719 drwxr-xr-x   5 qinshen  staff    160 Jul 22 01:40 ../
+8596271721 -rw-r--r--   1 qinshen  staff    505 Jul 22 01:17 config.toml
+8596271722 -rw-r--r--   1 qinshen  staff  13952 Jul 22 01:17 crud_test.go
+8596271723 -rw-r--r--   1 qinshen  staff    909 Jul 22 01:17 integration_test.go
+8596271724 -rw-r--r--   1 qinshen  staff   2929 Jul 22 01:17 pgxdata_blob.go
+8596271725 -rw-r--r--   1 qinshen  staff   4203 Jul 22 01:17 pgxdata_customer.go
+8596271726 -rw-r--r--   1 qinshen  staff   1817 Jul 22 01:17 pgxdata_db.go
+8596271727 -rw-r--r--   1 qinshen  staff   3024 Jul 22 01:17 pgxdata_part.go
+8596271728 -rw-r--r--   1 qinshen  staff   4491 Jul 22 01:17 pgxdata_renamed_field_customer.go
+8596271729 -rw-r--r--   1 qinshen  staff   3651 Jul 22 01:17 pgxdata_semester.go
+8596271730 -rw-r--r--   1 qinshen  staff   3283 Jul 22 01:17 pgxdata_widget.go
+
+```
+
 
 ## Testing
 
