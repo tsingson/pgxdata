@@ -1,1 +1,7 @@
+*/vendor
 /build
+test
+test/ddd
+test/data
+vendor
+

@@ -1,24 +1,37 @@
 # pgxdata
 
- a tool to generate a jackc/pgx database go package  tailored to exists postgresql database schema.
+ a tool to generate a [jackc/pgx](https://github.com/jackc/pgx) database go package  tailored to exists postgresql database schema.
+
+
 
 ## Usage
-**STEP 1** first install pgxdata
+
+### **STEP 1**  install pgxdata 
+
+first install pgxdata
+
 ```
 go get -u github.com/jackc/pgxdata
 ```
 
-**STEP 2** add GOPATH/bin to PATH , make sure pgxdata runing anywhere
+### **STEP 2**  setting path 
+
+add GOPATH/bin to PATH, or move pgxdata to /usr/local/bin ..etc , 
+make sure pgxdata runing anywhere
 
 
-**STEP 3** then create a postgresql schema like this
+### **STEP 3** create schema 
+
+ then create a postgresql schema like this
+
 ```
     createdb pgxdata
     psql pgxdata -f test/structure.sql
 ```
 
 
-**STEP 4** run pgxdata once to create a new go package name "dbi" within $GOPATH/src
+### **STEP 4**  create package 
+run pgxdata once to create a new go package name "dbi"  or some other package name within $GOPATH/src
 ```
    cd $GOPATH/src
    pgxdata init dbi
@@ -52,7 +65,8 @@ table_name = "customer"
 ```
 
 
-**STEP 5** edit the config file dbi/config.toml
+### **STEP 5**  edit config 
+edit the config file dbi/config.toml
 ```
 vi dbi/config.toml
 ```
@@ -101,13 +115,15 @@ struct_name = "Blob"
 ```
 
 
-**STEP 6** goto dbi directory and run generate
+### **STEP 6**  run generate 
+goto dbi directory and run generate
 ```
 cd dbi
 pgxdata generate
 ```
 
-**Final** check $GOPATH/src/dbi to see all generated go package for postgres database pgxdata
+### **Final**  review generated code 
+check $GOPATH/src/dbi to see all generated go package for postgres database pgxdata
 ```
 ls $GOPATH/src/dbi
 

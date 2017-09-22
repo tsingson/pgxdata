@@ -1,5 +1,13 @@
 package = "data"
 
+[database]
+host = "127.0.0.1"
+port = 5432
+database = "pgxdata"
+ user = "postgres"
+ password = "postgres"
+
+
 [[tables]]
 table_name = "customer"
 struct_name = "Customer"
